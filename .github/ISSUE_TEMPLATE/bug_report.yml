@@ -1,0 +1,84 @@
+
+name: Bug Report
+description: Report a broken button, trigger, feedback state, or connection issue in the Companion config
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: checkboxes
+    id: pre-checks
+    attributes:
+      label: Pre-submission checks
+      description: Please verify the following before submitting an issue.
+      options:
+        - label: I confirmed I am testing on the latest pull/version of the Roddy Companion configuration
+          required: true
+        - label: I checked existing issues to make sure this isn't already reported
+          required: true
+
+  - type: dropdown
+    id: stream-deck
+    attributes:
+      label: Affected Stream Deck
+      description: Select the Stream Deck surface where the issue occurred (or select Non-Surface if it is a background trigger/server issue).
+      options:
+        - "SD0 — Sound Desk | Stream Deck + XL (36 buttons [9x4], 6 touch buttons, 6 rotary encoders)"
+        - "SD1 — Light Desk | Stream Deck + (32 buttons [8x4])"
+        - "SD2 — SR Backstage Wall, next to hallway door | Stream Deck + XL (36 buttons [9x4], 6 touch buttons, 6 rotary encoders)"
+        - "SD3 — Walsh's Desk | Stream Deck + (32 buttons [8x4])"
+        - "SD4 — SR Lobby Door, main lobby door | Stream Deck MK.2 (15 buttons [5x3])"
+        - "SD5 — SL Lobby Door, far side lobby door | Stream Deck MK.2 (15 buttons [5x3])"
+        - "All Surfaces / Multiple Stream Decks"
+        - "None (Background Trigger, Variable, or Server Issue)"
+    validations:
+      required: true
+
+  - type: input
+    id: page-button
+    attributes:
+      label: Page & Button / Encoder Location (if applicable)
+      description: Specify the Companion page number/name and button coordinate, touch button, encoder, or trigger name.
+      placeholder: "e.g., Page 12 (Sound) - Button 2/4, Encoder 3, or Trigger: Show Startup"
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the bug
+      description: A clear and concise description of what went wrong. Screenshots or logs are always helpful.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: How to trigger the issue on the surface or in the Companion Web UI.
+      value: |
+        1. Go to page '...'
+        2. Press button / turn encoder '...'
+        3. Observe error / state mismatch
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What should happen (e.g., button turns green, Eos fires cue, Shelly relay toggles).
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Please complete the relevant hardware/software details.
+      value: |
+        - **Companion Version:** (e.g., v4.3.4 / v5.x)
+        - **Connected Device / Module:** (e.g., Eos, Soundcraft, Shelly Pro 1, NDI)
+        - **Host / Browser:** 
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Add any logs, custom variable states, or notes about the setup here.

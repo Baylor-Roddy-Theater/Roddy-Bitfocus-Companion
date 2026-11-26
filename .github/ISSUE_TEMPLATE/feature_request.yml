@@ -1,0 +1,39 @@
+
+name: Feature / Page Request
+description: Propose a new button layout, macro, trigger, or hardware integration
+title: "[FEAT] "
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - New Page / Layout Design
+        - New Macro / Multi-Step Button
+        - Trigger / Automation / Variable Logic
+        - New Device / Module Integration
+        - UI / Color / Icon Cleanup
+    validations:
+      required: true
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: What should this do?
+      description: Describe the workflow, button action, or feedback state you want added.
+    validations:
+      required: true
+
+  - type: textarea
+    id: hardware
+    attributes:
+      label: Target Surface & Controlled Gear
+      description: Which Stream Deck(s) and rack/booth equipment should this interact with?
+      placeholder: "e.g., Booth Stream Deck XL -> Soundcraft Si Expression 1 & QLab"
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Details / Mockup Notes
+      description: Any specific button coordinates, colors, PIN lockouts, or OSC/HTTP commands to use.
